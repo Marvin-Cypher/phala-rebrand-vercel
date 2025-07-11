@@ -28,6 +28,84 @@
             border-radius: 32px;
         }
         
+        /* Navigation Dropdown Styles */
+        .nav-dropdown {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background: white;
+            border-radius: 16px;
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+            border: 1px solid #e5e7eb;
+            width: 320px;
+            z-index: 1000;
+            margin-top: 4px;
+            pointer-events: auto;
+        }
+        .nav-item {
+            position: relative;
+        }
+        .nav-item:hover .nav-dropdown,
+        .nav-dropdown:hover {
+            display: block;
+        }
+        .nav-dropdown::before {
+            content: '';
+            position: absolute;
+            top: -8px;
+            left: 0;
+            right: 0;
+            height: 8px;
+            background: transparent;
+        }
+        .dropdown-link {
+            display: block;
+            padding: 12px 16px;
+            text-decoration: none;
+            color: #374151;
+            border-radius: 8px;
+            margin: 4px;
+            transition: all 0.2s;
+        }
+        .dropdown-link:hover {
+            background: #f3f4f6;
+            color: #111827;
+        }
+        .dropdown-section {
+            padding: 16px;
+            border-bottom: 1px solid #e5e7eb;
+        }
+        .dropdown-section:last-child {
+            border-bottom: none;
+        }
+        .dropdown-title {
+            font-weight: 600;
+            color: #CDFA50;
+            background: #000;
+            padding: 4px 8px;
+            border-radius: 4px;
+            display: inline-block;
+            font-size: 12px;
+            margin-bottom: 8px;
+        }
+        .dropdown-cta {
+            background: #CDFA50;
+            color: #000;
+            padding: 8px 16px;
+            border-radius: 8px;
+            text-decoration: none;
+            display: inline-block;
+            font-weight: 600;
+            font-size: 14px;
+            margin: 8px 16px 16px 16px;
+        }
+        .ai-solutions-link {
+            background: linear-gradient(135deg, #CDFA50 0%, #B8E645 100%);
+            color: #000 !important;
+            font-weight: 600;
+        }
+        
         /* Globe Animation */
         .globe-container {
             position: relative;
@@ -151,9 +229,182 @@
             </div>
             
             <div class="hidden md:flex space-x-8">
-                <a href="/" class="text-gray-700 hover:text-gray-900 font-medium text-[16px]">Home</a>
-                <a href="https://docs.phala.network" class="text-gray-700 hover:text-gray-900 font-medium text-[16px]">Docs</a>
-                <a href="https://cloud.phala.network" class="btn-phala">Get Started</a>
+                <!-- AI Solutions (Primary) -->
+                <div class="nav-item">
+                    <a href="#" class="ai-solutions-link text-[16px] font-medium px-4 py-2 rounded-lg flex items-center space-x-1">
+                        <span>AI Solutions</span>
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                        </svg>
+                    </a>
+                    <div class="nav-dropdown">
+                        <div class="dropdown-section">
+                            <div class="dropdown-title">MODELS & INFERENCE</div>
+                            <a href="https://phala-cloud.vercel.app/dashboard/confidential-ai-models" class="dropdown-link">
+                                <div class="font-medium text-sm">Confidential AI Models</div>
+                                <div class="text-xs text-gray-500">Pre-trained models from $2.88/hour</div>
+                            </a>
+                            <a href="https://cloud.phala.network/features/gpu-tee" class="dropdown-link">
+                                <div class="font-medium text-sm">GPU TEE Inference</div>
+                                <div class="text-xs text-gray-500">NVIDIA H100/H200 with <5% overhead</div>
+                            </a>
+                        </div>
+                        <div class="dropdown-section">
+                            <div class="dropdown-title">AGENT PLATFORM</div>
+                            <a href="https://cloud.phala.network/eliza" class="dropdown-link">
+                                <div class="font-medium text-sm">Agent Framework</div>
+                                <div class="text-xs text-gray-500">Build with Eliza Builder</div>
+                            </a>
+                            <a href="https://cloud.phala.network/features/mcp-hosting" class="dropdown-link">
+                                <div class="font-medium text-sm">MCP Hosting</div>
+                                <div class="text-xs text-gray-500">Model Context Protocol serving</div>
+                            </a>
+                        </div>
+                        <a href="https://cloud.phala.network" class="dropdown-cta">Deploy AI Today →</a>
+                    </div>
+                </div>
+
+                <!-- Developers -->
+                <div class="nav-item">
+                    <a href="#" class="text-gray-700 hover:text-gray-900 font-medium text-[16px] flex items-center space-x-1">
+                        <span>Developers</span>
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                        </svg>
+                    </a>
+                    <div class="nav-dropdown">
+                        <div class="dropdown-section">
+                            <a href="https://cloud.phala.network/templates" class="dropdown-link">
+                                <div class="font-medium text-sm">Quick Start</div>
+                                <div class="text-xs text-gray-500">5-minute deployment guide</div>
+                            </a>
+                            <a href="https://docs.phala.network/phala-cloud/getting-started" class="dropdown-link">
+                                <div class="font-medium text-sm">Documentation Hub</div>
+                                <div class="text-xs text-gray-500">API reference and SDK guides</div>
+                            </a>
+                            <a href="https://docs.phala.network/phala-cloud/phala-cloud-user-guides/advanced-deployment-options" class="dropdown-link">
+                                <div class="font-medium text-sm">Builder Tools</div>
+                                <div class="text-xs text-gray-500">Dstack framework and CLI tools</div>
+                            </a>
+                            <a href="https://github.com/Phala-Network/phala-cloud-community" class="dropdown-link">
+                                <div class="font-medium text-sm">Community</div>
+                                <div class="text-xs text-gray-500">GitHub repos and Discord</div>
+                            </a>
+                        </div>
+                        <a href="https://cloud.phala.network" class="dropdown-cta">Start Building →</a>
+                    </div>
+                </div>
+
+                <!-- Security -->
+                <div class="nav-item">
+                    <a href="#" class="text-gray-700 hover:text-gray-900 font-medium text-[16px] flex items-center space-x-1">
+                        <span>Security</span>
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                        </svg>
+                    </a>
+                    <div class="nav-dropdown">
+                        <div class="dropdown-section">
+                            <a href="https://docs.phala.network/dstack/overview" class="dropdown-link">
+                                <div class="font-medium text-sm">TEE Technology</div>
+                                <div class="text-xs text-gray-500">Intel/AMD/NVIDIA hardware security</div>
+                            </a>
+                            <a href="https://cloud.phala.network/explorerL" class="dropdown-link">
+                                <div class="font-medium text-sm">Trust Center</div>
+                                <div class="text-xs text-gray-500">Live attestations and proofs</div>
+                            </a>
+                            <a href="https://tee-visualization.vercel.app/?selected=kms-quote" class="dropdown-link">
+                                <div class="font-medium text-sm">Verification</div>
+                                <div class="text-xs text-gray-500">Attestation explorer</div>
+                            </a>
+                            <a href="#" class="dropdown-link">
+                                <div class="font-medium text-sm">Compliance</div>
+                                <div class="text-xs text-gray-500">HIPAA, GDPR, SOC 2 Type II</div>
+                            </a>
+                        </div>
+                        <a href="https://phala.network/posts/how-to-generate-attestation-repport-and-prove-your-application-runs-in-tee" class="dropdown-cta">Verify Security →</a>
+                    </div>
+                </div>
+
+                <!-- Network -->
+                <div class="nav-item">
+                    <a href="#" class="text-gray-700 hover:text-gray-900 font-medium text-[16px] flex items-center space-x-1">
+                        <span>Network</span>
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                        </svg>
+                    </a>
+                    <div class="nav-dropdown">
+                        <div class="dropdown-section">
+                            <a href="/infrastructure.html" class="dropdown-link">
+                                <div class="font-medium text-sm">Infrastructure</div>
+                                <div class="text-xs text-gray-500">Distributed trustless cloud network</div>
+                            </a>
+                            <a href="https://docs.phala.network/compute-providers/run-workers-on-phala" class="dropdown-link">
+                                <div class="font-medium text-sm">Provide TEE Node</div>
+                                <div class="text-xs text-gray-500">Run workers and earn rewards</div>
+                            </a>
+                            <a href="https://docs.phala.network/tech-specs/blockchain" class="dropdown-link">
+                                <div class="font-medium text-sm">Phala Network</div>
+                                <div class="text-xs text-gray-500">Blockchain infrastructure and specs</div>
+                            </a>
+                            <a href="https://phala.subsquare.io" class="dropdown-link">
+                                <div class="font-medium text-sm">Governance</div>
+                                <div class="text-xs text-gray-500">Proposals and voting</div>
+                            </a>
+                        </div>
+                        <a href="https://app.phala.network" class="dropdown-cta">Join Network →</a>
+                    </div>
+                </div>
+
+                <!-- Enterprise -->
+                <div class="nav-item">
+                    <a href="#" class="text-gray-700 hover:text-gray-900 font-medium text-[16px] flex items-center space-x-1">
+                        <span>Enterprise</span>
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                        </svg>
+                    </a>
+                    <div class="nav-dropdown">
+                        <div class="dropdown-section">
+                            <a href="https://phala.network/reports/2025RealCodeForRealdAGI.pdf" class="dropdown-link">
+                                <div class="font-medium text-sm">Solutions by Industry</div>
+                                <div class="text-xs text-gray-500">Financial, Healthcare, Data, AI SaaS</div>
+                            </a>
+                            <a href="https://cloud.phala.network/pricing" class="dropdown-link">
+                                <div class="font-medium text-sm">Pricing</div>
+                                <div class="text-xs text-gray-500">Calculator and enterprise plans</div>
+                            </a>
+                            <a href="https://cloud.phala.network/contact" class="dropdown-link">
+                                <div class="font-medium text-sm">Support</div>
+                                <div class="text-xs text-gray-500">Sales and technical support</div>
+                            </a>
+                            <a href="https://phala.network/tags/Phala%20Cloud" class="dropdown-link">
+                                <div class="font-medium text-sm">Resources</div>
+                                <div class="text-xs text-gray-500">Case studies and whitepapers</div>
+                            </a>
+                        </div>
+                        <a href="https://cloud.phala.network/contact" class="dropdown-cta">Contact Sales →</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="flex space-x-4">
+                <a href="https://github.com/Phala-Network" class="w-10 h-10 bg-gray-100 rounded-full flex items-center justify-center hover:bg-gray-200 transition-colors">
+                    <svg class="w-5 h-5 text-gray-600" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                    </svg>
+                </a>
+                <a href="https://discord.gg/phala" class="w-10 h-10 bg-gray-100 rounded-full flex items-center justify-center hover:bg-gray-200 transition-colors">
+                    <svg class="w-5 h-5 text-gray-600" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M20.317 4.37a19.791 19.791 0 0 0-4.885-1.515.074.074 0 0 0-.079.037c-.21.375-.444.864-.608 1.25a18.27 18.27 0 0 0-5.487 0 12.64 12.64 0 0 0-.617-1.25.077.077 0 0 0-.079-.037A19.736 19.736 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.057a.082.082 0 0 0 .031.057 19.9 19.9 0 0 0 5.993 3.03.078.078 0 0 0 .084-.028 14.09 14.09 0 0 0 1.226-1.994.076.076 0 0 0-.041-.106 13.107 13.107 0 0 1-1.872-.892.077.077 0 0 1-.008-.128 10.2 10.2 0 0 0 .372-.292.074.074 0 0 1 .077-.01c3.928 1.793 8.18 1.793 12.062 0a.074.074 0 0 1 .078.01c.12.098.246.198.373.292a.077.077 0 0 1-.006.127 12.299 12.299 0 0 1-1.873.892.077.077 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028 19.839 19.839 0 0 0 6.002-3.03.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.03zM8.02 15.33c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.956-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.956 2.418-2.157 2.418zm7.975 0c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.955-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.946 2.418-2.157 2.418z"/>
+                    </svg>
+                </a>
+                <a href="https://twitter.com/PhalaNetwork" class="w-10 h-10 bg-gray-100 rounded-full flex items-center justify-center hover:bg-gray-200 transition-colors">
+                    <svg class="w-5 h-5 text-gray-600" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+                    </svg>
+                </a>
             </div>
         </div>
     </nav>
