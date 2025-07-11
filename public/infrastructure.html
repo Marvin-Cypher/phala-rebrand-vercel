@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Infrastructure - Phala Network</title>
+    <title>Infrastructure - Phala</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
@@ -27,6 +27,114 @@
             background: linear-gradient(135deg, #F0F2ED 0%, #E8EADF 100%);
             border-radius: 32px;
         }
+        
+        /* Globe Animation */
+        .globe-container {
+            position: relative;
+            width: 400px;
+            height: 400px;
+            margin: 0 auto;
+        }
+        
+        .globe {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            background: radial-gradient(circle at 30% 30%, #1e293b, #0f172a);
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 0 50px rgba(0, 0, 0, 0.3);
+        }
+        
+        .globe::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse"><path d="M 10 0 L 0 0 0 10" fill="none" stroke="%23334155" stroke-width="0.5" opacity="0.3"/></pattern></defs><rect width="100" height="100" fill="url(%23grid)"/></svg>');
+            border-radius: 50%;
+        }
+        
+        .network-node {
+            position: absolute;
+            width: 12px;
+            height: 12px;
+            background: #CDFA50;
+            border-radius: 50%;
+            box-shadow: 0 0 15px #CDFA50;
+            animation: pulse 2s infinite;
+        }
+        
+        .network-node::before {
+            content: '';
+            position: absolute;
+            top: -2px;
+            left: -2px;
+            right: -2px;
+            bottom: -2px;
+            background: rgba(205, 250, 80, 0.3);
+            border-radius: 50%;
+            animation: ripple 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.6; }
+        }
+        
+        @keyframes ripple {
+            0% { transform: scale(1); opacity: 1; }
+            100% { transform: scale(2); opacity: 0; }
+        }
+        
+        .network-connection {
+            position: absolute;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, #CDFA50, transparent);
+            animation: flow 3s infinite;
+        }
+        
+        @keyframes flow {
+            0% { opacity: 0; }
+            50% { opacity: 1; }
+            100% { opacity: 0; }
+        }
+        
+        .stats-card {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 20px;
+            padding: 24px;
+            transition: all 0.3s ease;
+        }
+        
+        .stats-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+        }
+        
+        .tech-stack-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 24px;
+        }
+        
+        .tech-card {
+            background: white;
+            border-radius: 16px;
+            padding: 24px;
+            text-align: center;
+            border: 1px solid #e5e7eb;
+            transition: all 0.3s ease;
+        }
+        
+        .tech-card:hover {
+            border-color: #CDFA50;
+            box-shadow: 0 10px 30px rgba(205, 250, 80, 0.2);
+        }
     </style>
 </head>
 <body class="bg-white">
@@ -39,7 +147,7 @@
                         <span class="text-lime-400 font-bold text-lg">P</span>
                     </div>
                 </div>
-                <span class="ml-3 text-xl font-bold text-black">Phala Network</span>
+                <span class="ml-3 text-xl font-bold text-black">Phala</span>
             </div>
             
             <div class="hidden md:flex space-x-8">
@@ -56,26 +164,47 @@
             <div class="mb-8">
                 <span class="border border-gray-300 rounded-full px-4 py-2 text-sm font-medium inline-flex items-center gap-2 bg-white">
                     <div class="w-2 h-2 bg-lime-400 rounded-full"></div>
-                    Distributed Trustless Cloud
+                    Global Computer Network
                 </span>
             </div>
             
             <div class="mb-12">
                 <h1 class="text-[48px] md:text-[64px] font-bold text-black mb-6">
-                    A Decentralized Cloud
+                    The World's First
                 </h1>
                 <h2 class="text-[36px] md:text-[48px] font-bold text-gray-700 mb-8">
-                    Plus Good Performance
+                    Confidential Computing Cloud
                 </h2>
                 <p class="text-[20px] text-gray-600 max-w-4xl mx-auto leading-relaxed">
-                    The world's first confidential computing network that combines the trust of decentralization 
-                    with the performance enterprises demand. Deploy AI workloads with verifiable security.
+                    50,000+ workers worldwide providing trustless compute with hardware-level security. 
+                    Deploy confidential AI workloads across a distributed network that combines the best of 
+                    cloud computing with verifiable trust.
                 </p>
             </div>
             
+            <!-- Global Network Visualization -->
+            <div class="globe-container mb-16">
+                <div class="globe">
+                    <!-- Network nodes positioned around the globe -->
+                    <div class="network-node" style="top: 20%; left: 15%;"></div>
+                    <div class="network-node" style="top: 35%; left: 80%;"></div>
+                    <div class="network-node" style="top: 60%; left: 25%;"></div>
+                    <div class="network-node" style="top: 45%; left: 60%;"></div>
+                    <div class="network-node" style="top: 75%; left: 70%;"></div>
+                    <div class="network-node" style="top: 25%; left: 45%;"></div>
+                    <div class="network-node" style="top: 80%; left: 40%;"></div>
+                    <div class="network-node" style="top: 30%; left: 75%;"></div>
+                    
+                    <!-- Connection lines -->
+                    <div class="network-connection" style="top: 30%; left: 20%; width: 200px; transform: rotate(25deg);"></div>
+                    <div class="network-connection" style="top: 50%; left: 30%; width: 150px; transform: rotate(-15deg);"></div>
+                    <div class="network-connection" style="top: 65%; left: 40%; width: 180px; transform: rotate(45deg);"></div>
+                </div>
+            </div>
+            
             <div class="flex flex-col md:flex-row gap-6 justify-center">
-                <a href="https://cloud.phala.network" class="btn-phala">Deploy Now</a>
-                <a href="https://docs.phala.network" class="bg-black text-white px-8 py-4 rounded-full font-medium hover:bg-gray-800 transition-colors">View Documentation</a>
+                <a href="https://cloud.phala.network" class="btn-phala">Join the Network</a>
+                <a href="https://docs.phala.network/compute-providers/basic-info" class="bg-black text-white px-8 py-4 rounded-full font-medium hover:bg-gray-800 transition-colors">Become a Worker</a>
             </div>
         </div>
     </section>
@@ -84,99 +213,156 @@
     <section class="py-24 bg-white">
         <div class="max-w-6xl mx-auto px-4">
             <div class="text-center mb-16">
-                <h2 class="text-[48px] font-bold mb-8">Network Performance</h2>
+                <h2 class="text-[48px] font-bold mb-8">Live Network Statistics</h2>
                 <p class="text-[20px] text-gray-600 max-w-3xl mx-auto">
-                    Proven scale and reliability for enterprise workloads
+                    Real-time data from the world's largest confidential computing network
                 </p>
             </div>
             
             <div class="grid md:grid-cols-4 gap-8">
-                <div class="text-center p-8 bg-gradient-to-br from-lime-50 to-lime-100 rounded-[32px]">
-                    <div class="text-[48px] font-bold text-lime-600 mb-2">50K+</div>
+                <div class="stats-card text-center">
+                    <div class="text-[48px] font-bold text-lime-600 mb-2">50,421</div>
                     <div class="text-[18px] font-semibold text-gray-700">Active Workers</div>
-                    <div class="text-[14px] text-gray-600 mt-2">Compute providers worldwide</div>
+                    <div class="text-[14px] text-gray-600 mt-2">Distributed globally</div>
                 </div>
-                <div class="text-center p-8 bg-zinc-100 rounded-[32px]">
+                <div class="stats-card text-center">
+                    <div class="text-[48px] font-bold text-gray-800 mb-2">125M</div>
+                    <div class="text-[18px] font-semibold text-gray-700">Compute Hours</div>
+                    <div class="text-[14px] text-gray-600 mt-2">Delivered this month</div>
+                </div>
+                <div class="stats-card text-center">
                     <div class="text-[48px] font-bold text-gray-800 mb-2">99.9%</div>
-                    <div class="text-[18px] font-semibold text-gray-700">Uptime</div>
-                    <div class="text-[14px] text-gray-600 mt-2">Enterprise-grade reliability</div>
+                    <div class="text-[18px] font-semibold text-gray-700">Network Uptime</div>
+                    <div class="text-[14px] text-gray-600 mt-2">Enterprise reliability</div>
                 </div>
-                <div class="text-center p-8 bg-zinc-100 rounded-[32px]">
-                    <div class="text-[48px] font-bold text-gray-800 mb-2">&lt;5%</div>
-                    <div class="text-[18px] font-semibold text-gray-700">Performance Overhead</div>
-                    <div class="text-[14px] text-gray-600 mt-2">TEE efficiency vs native</div>
-                </div>
-                <div class="text-center p-8 bg-zinc-100 rounded-[32px]">
-                    <div class="text-[48px] font-bold text-gray-800 mb-2">24/7</div>
-                    <div class="text-[18px] font-semibold text-gray-700">Monitoring</div>
-                    <div class="text-[14px] text-gray-600 mt-2">Real-time attestation</div>
+                <div class="stats-card text-center">
+                    <div class="text-[48px] font-bold text-gray-800 mb-2">$2.88</div>
+                    <div class="text-[18px] font-semibold text-gray-700">Starting Price</div>
+                    <div class="text-[14px] text-gray-600 mt-2">Per hour GPU inference</div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- TEE Technology Section -->
+    <!-- Geographic Distribution -->
     <section class="py-24 bg-gray-50">
         <div class="max-w-6xl mx-auto px-4">
             <div class="text-center mb-16">
-                <h2 class="text-[48px] font-bold mb-8">Trusted Execution Environments</h2>
+                <h2 class="text-[48px] font-bold mb-8">Global Infrastructure</h2>
                 <p class="text-[20px] text-gray-600 max-w-3xl mx-auto">
-                    Hardware-level security across multiple CPU architectures
+                    Workers distributed across 6 continents providing low-latency access worldwide
                 </p>
             </div>
             
             <div class="grid md:grid-cols-3 gap-8">
-                <div class="bg-white p-8 rounded-[32px] shadow-lg">
-                    <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mb-6">
-                        <span class="text-2xl font-bold text-blue-600">Intel</span>
+                <div class="bg-white p-8 rounded-[32px] shadow-lg text-center">
+                    <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mb-6 mx-auto">
+                        <span class="text-2xl">🌎</span>
                     </div>
-                    <h3 class="text-[24px] font-bold mb-4">Intel SGX/TDX</h3>
-                    <p class="text-gray-600 mb-6">Software Guard Extensions and Trust Domain Extensions for confidential computing</p>
-                    <ul class="text-[14px] text-gray-600 space-y-2">
-                        <li>• Memory encryption</li>
-                        <li>• Remote attestation</li>
-                        <li>• Secure enclaves</li>
-                    </ul>
+                    <h3 class="text-[24px] font-bold mb-4">Americas</h3>
+                    <div class="text-[32px] font-bold text-lime-600 mb-2">18,234</div>
+                    <p class="text-gray-600">Active workers across North and South America</p>
                 </div>
-                <div class="bg-white p-8 rounded-[32px] shadow-lg">
-                    <div class="w-16 h-16 bg-red-100 rounded-full flex items-center justify-center mb-6">
-                        <span class="text-2xl font-bold text-red-600">AMD</span>
+                <div class="bg-white p-8 rounded-[32px] shadow-lg text-center">
+                    <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mb-6 mx-auto">
+                        <span class="text-2xl">🌍</span>
                     </div>
-                    <h3 class="text-[24px] font-bold mb-4">AMD SEV</h3>
-                    <p class="text-gray-600 mb-6">Secure Encrypted Virtualization for VM-level protection</p>
-                    <ul class="text-[14px] text-gray-600 space-y-2">
-                        <li>• VM memory encryption</li>
-                        <li>• Secure nested paging</li>
-                        <li>• Hardware isolation</li>
-                    </ul>
+                    <h3 class="text-[24px] font-bold mb-4">Europe & Africa</h3>
+                    <div class="text-[32px] font-bold text-lime-600 mb-2">21,847</div>
+                    <p class="text-gray-600">Strong presence in European data centers</p>
                 </div>
-                <div class="bg-white p-8 rounded-[32px] shadow-lg">
-                    <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mb-6">
-                        <span class="text-2xl font-bold text-green-600">NVIDIA</span>
+                <div class="bg-white p-8 rounded-[32px] shadow-lg text-center">
+                    <div class="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mb-6 mx-auto">
+                        <span class="text-2xl">🌏</span>
                     </div>
-                    <h3 class="text-[24px] font-bold mb-4">H100/H200 TEE</h3>
-                    <p class="text-gray-600 mb-6">Confidential computing for AI workloads on GPU</p>
-                    <ul class="text-[14px] text-gray-600 space-y-2">
-                        <li>• GPU memory protection</li>
-                        <li>• AI model security</li>
-                        <li>• High-performance TEE</li>
-                    </ul>
+                    <h3 class="text-[24px] font-bold mb-4">Asia Pacific</h3>
+                    <div class="text-[32px] font-bold text-lime-600 mb-2">10,340</div>
+                    <p class="text-gray-600">Rapid growth in Asia-Pacific region</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Call to Action -->
-    <section class="py-24 bg-black text-white">
-        <div class="max-w-4xl mx-auto px-4 text-center">
-            <h2 class="text-[48px] font-bold mb-8">Ready to Deploy?</h2>
-            <p class="text-[20px] text-gray-300 mb-12 max-w-2xl mx-auto">
-                Join thousands of developers building the future of confidential AI on Phala Network
+    <!-- Technology Stack -->
+    <section class="py-24 bg-white">
+        <div class="max-w-6xl mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-[48px] font-bold mb-8">Powered by Leading Hardware</h2>
+                <p class="text-[20px] text-gray-600 max-w-3xl mx-auto">
+                    Support for all major TEE technologies ensuring maximum compatibility and performance
+                </p>
+            </div>
+            
+            <div class="tech-stack-grid">
+                <div class="tech-card">
+                    <div class="w-20 h-20 bg-blue-100 rounded-full flex items-center justify-center mb-6 mx-auto">
+                        <span class="text-2xl font-bold text-blue-600">Intel</span>
+                    </div>
+                    <h3 class="text-[20px] font-bold mb-3">Intel SGX/TDX</h3>
+                    <p class="text-gray-600 text-sm mb-4">Software Guard Extensions and Trust Domain Extensions</p>
+                    <div class="text-lime-600 font-semibold">28,420 workers</div>
+                </div>
+                
+                <div class="tech-card">
+                    <div class="w-20 h-20 bg-red-100 rounded-full flex items-center justify-center mb-6 mx-auto">
+                        <span class="text-2xl font-bold text-red-600">AMD</span>
+                    </div>
+                    <h3 class="text-[20px] font-bold mb-3">AMD SEV</h3>
+                    <p class="text-gray-600 text-sm mb-4">Secure Encrypted Virtualization for VM-level protection</p>
+                    <div class="text-lime-600 font-semibold">15,230 workers</div>
+                </div>
+                
+                <div class="tech-card">
+                    <div class="w-20 h-20 bg-green-100 rounded-full flex items-center justify-center mb-6 mx-auto">
+                        <span class="text-2xl font-bold text-green-600">NVIDIA</span>
+                    </div>
+                    <h3 class="text-[20px] font-bold mb-3">H100/H200 TEE</h3>
+                    <p class="text-gray-600 text-sm mb-4">Confidential computing for AI workloads on GPU</p>
+                    <div class="text-lime-600 font-semibold">6,771 workers</div>
+                </div>
+                
+                <div class="tech-card">
+                    <div class="w-20 h-20 bg-purple-100 rounded-full flex items-center justify-center mb-6 mx-auto">
+                        <span class="text-xl font-bold text-purple-600">ARM</span>
+                    </div>
+                    <h3 class="text-[20px] font-bold mb-3">ARM TrustZone</h3>
+                    <p class="text-gray-600 text-sm mb-4">Mobile and edge computing security</p>
+                    <div class="text-lime-600 font-semibold">Coming Soon</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Network Performance -->
+    <section class="py-24 bg-gray-900 text-white">
+        <div class="max-w-6xl mx-auto px-4 text-center">
+            <h2 class="text-[48px] font-bold mb-8">Why Choose Phala Network?</h2>
+            <p class="text-[20px] text-gray-300 mb-16 max-w-3xl mx-auto">
+                The only cloud that combines the scale of centralized computing with the trust of decentralization
             </p>
+            
+            <div class="grid md:grid-cols-3 gap-8 mb-16">
+                <div class="p-8">
+                    <div class="text-[64px] font-bold text-lime-400 mb-4">&lt;5%</div>
+                    <h3 class="text-[24px] font-bold mb-3">Performance Overhead</h3>
+                    <p class="text-gray-400">TEE efficiency compared to native execution</p>
+                </div>
+                <div class="p-8">
+                    <div class="text-[64px] font-bold text-lime-400 mb-4">24/7</div>
+                    <h3 class="text-[24px] font-bold mb-3">Real-time Monitoring</h3>
+                    <p class="text-gray-400">Continuous attestation and health checks</p>
+                </div>
+                <div class="p-8">
+                    <div class="text-[64px] font-bold text-lime-400 mb-4">100%</div>
+                    <h3 class="text-[24px] font-bold mb-3">Verifiable Trust</h3>
+                    <p class="text-gray-400">Every computation cryptographically proven</p>
+                </div>
+            </div>
+            
             <div class="flex flex-col md:flex-row gap-6 justify-center">
-                <a href="https://cloud.phala.network" class="btn-phala">Start Building</a>
-                <a href="https://docs.phala.network/compute-providers/basic-info" class="border border-gray-600 text-white px-8 py-4 rounded-full font-medium hover:bg-gray-900 transition-colors">
-                    Become a Worker
+                <a href="https://cloud.phala.network" class="btn-phala">Deploy Workloads</a>
+                <a href="https://docs.phala.network/compute-providers/basic-info" class="border border-lime-400 text-lime-400 px-8 py-4 rounded-full font-medium hover:bg-lime-400 hover:text-black transition-colors">
+                    Start Earning
                 </a>
             </div>
         </div>
@@ -191,9 +377,9 @@
                         <span class="text-lime-400 font-bold text-sm">P</span>
                     </div>
                 </div>
-                <span class="text-lg font-bold">Phala Network</span>
+                <span class="text-lg font-bold">Phala</span>
             </div>
-            <p class="text-gray-400">© 2024 Phala Network. All rights reserved.</p>
+            <p class="text-gray-400">© 2024 Phala. All rights reserved.</p>
         </div>
     </footer>
 </body>

@@ -72,13 +72,24 @@
             border: 1px solid #e5e7eb;
             width: 320px;
             z-index: 1000;
-            margin-top: 8px;
-        }
-        .nav-item:hover .nav-dropdown {
-            display: block;
+            margin-top: 4px;
+            pointer-events: auto;
         }
         .nav-item {
             position: relative;
+        }
+        .nav-item:hover .nav-dropdown,
+        .nav-dropdown:hover {
+            display: block;
+        }
+        .nav-dropdown::before {
+            content: '';
+            position: absolute;
+            top: -8px;
+            left: 0;
+            right: 0;
+            height: 8px;
+            background: transparent;
         }
         .dropdown-link {
             display: block;
@@ -138,7 +149,7 @@
                         <span class="text-lime-400 font-bold text-lg">P</span>
                     </div>
                 </div>
-                <span class="ml-3 text-xl font-bold text-black">Phala Network</span>
+                <span class="ml-3 text-xl font-bold text-black">Phala</span>
             </div>
             
             <div class="hidden md:flex space-x-8">
@@ -153,22 +164,22 @@
                     <div class="nav-dropdown">
                         <div class="dropdown-section">
                             <div class="dropdown-title">MODELS & INFERENCE</div>
-                            <a href="https://cloud.phala.network/models" class="dropdown-link">
+                            <a href="https://phala-cloud.vercel.app/dashboard/confidential-ai-models" class="dropdown-link">
                                 <div class="font-medium text-sm">Confidential AI Models</div>
                                 <div class="text-xs text-gray-500">Pre-trained models from $2.88/hour</div>
                             </a>
-                            <a href="https://cloud.phala.network/gpu-inference" class="dropdown-link">
+                            <a href="https://cloud.phala.network/features/gpu-tee" class="dropdown-link">
                                 <div class="font-medium text-sm">GPU TEE Inference</div>
                                 <div class="text-xs text-gray-500">NVIDIA H100/H200 with <5% overhead</div>
                             </a>
                         </div>
                         <div class="dropdown-section">
                             <div class="dropdown-title">AGENT PLATFORM</div>
-                            <a href="https://github.com/phala-network/eliza-builder" class="dropdown-link">
+                            <a href="https://cloud.phala.network/eliza" class="dropdown-link">
                                 <div class="font-medium text-sm">Agent Framework</div>
                                 <div class="text-xs text-gray-500">Build with Eliza Builder</div>
                             </a>
-                            <a href="https://cloud.phala.network/mcp" class="dropdown-link">
+                            <a href="https://cloud.phala.network/features/mcp-hosting" class="dropdown-link">
                                 <div class="font-medium text-sm">MCP Hosting</div>
                                 <div class="text-xs text-gray-500">Model Context Protocol serving</div>
                             </a>
@@ -187,24 +198,24 @@
                     </a>
                     <div class="nav-dropdown">
                         <div class="dropdown-section">
-                            <a href="#" class="dropdown-link">
+                            <a href="https://cloud.phala.network/templates" class="dropdown-link">
                                 <div class="font-medium text-sm">Quick Start</div>
                                 <div class="text-xs text-gray-500">5-minute deployment guide</div>
                             </a>
-                            <a href="#" class="dropdown-link">
+                            <a href="https://docs.phala.network/phala-cloud/getting-started" class="dropdown-link">
                                 <div class="font-medium text-sm">Documentation Hub</div>
                                 <div class="text-xs text-gray-500">API reference and SDK guides</div>
                             </a>
-                            <a href="#" class="dropdown-link">
+                            <a href="https://docs.phala.network/phala-cloud/phala-cloud-user-guides/advanced-deployment-options" class="dropdown-link">
                                 <div class="font-medium text-sm">Builder Tools</div>
                                 <div class="text-xs text-gray-500">Dstack framework and CLI tools</div>
                             </a>
-                            <a href="#" class="dropdown-link">
+                            <a href="https://github.com/Phala-Network/phala-cloud-community" class="dropdown-link">
                                 <div class="font-medium text-sm">Community</div>
                                 <div class="text-xs text-gray-500">GitHub repos and Discord</div>
                             </a>
                         </div>
-                        <a href="#" class="dropdown-cta">Start Building →</a>
+                        <a href="https://cloud.phala.network" class="dropdown-cta">Start Building →</a>
                     </div>
                 </div>
 
@@ -218,15 +229,15 @@
                     </a>
                     <div class="nav-dropdown">
                         <div class="dropdown-section">
-                            <a href="#" class="dropdown-link">
+                            <a href="https://docs.phala.network/dstack/overview" class="dropdown-link">
                                 <div class="font-medium text-sm">TEE Technology</div>
                                 <div class="text-xs text-gray-500">Intel/AMD/NVIDIA hardware security</div>
                             </a>
-                            <a href="#" class="dropdown-link">
+                            <a href="https://cloud.phala.network/explorerL" class="dropdown-link">
                                 <div class="font-medium text-sm">Trust Center</div>
                                 <div class="text-xs text-gray-500">Live attestations and proofs</div>
                             </a>
-                            <a href="#" class="dropdown-link">
+                            <a href="https://tee-visualization.vercel.app/?selected=kms-quote" class="dropdown-link">
                                 <div class="font-medium text-sm">Verification</div>
                                 <div class="text-xs text-gray-500">Attestation explorer</div>
                             </a>
@@ -235,7 +246,7 @@
                                 <div class="text-xs text-gray-500">HIPAA, GDPR, SOC 2 Type II</div>
                             </a>
                         </div>
-                        <a href="#" class="dropdown-cta">Verify Security →</a>
+                        <a href="https://phala.network/posts/how-to-generate-attestation-repport-and-prove-your-application-runs-in-tee" class="dropdown-cta">Verify Security →</a>
                     </div>
                 </div>
 
@@ -253,13 +264,13 @@
                                 <div class="font-medium text-sm">Infrastructure</div>
                                 <div class="text-xs text-gray-500">Distributed trustless cloud network</div>
                             </a>
-                            <a href="https://docs.phala.network/compute-providers/basic-info" class="dropdown-link">
-                                <div class="font-medium text-sm">Compute-to-Earn</div>
-                                <div class="text-xs text-gray-500">Become a worker and earn rewards</div>
+                            <a href="https://docs.phala.network/compute-providers/run-workers-on-phala" class="dropdown-link">
+                                <div class="font-medium text-sm">Provide TEE Node</div>
+                                <div class="text-xs text-gray-500">Run workers and earn rewards</div>
                             </a>
-                            <a href="https://docs.phala.network/tech-specs/pha-token" class="dropdown-link">
-                                <div class="font-medium text-sm">PHA Token</div>
-                                <div class="text-xs text-gray-500">Tokenomics and staking rewards</div>
+                            <a href="https://docs.phala.network/tech-specs/blockchain" class="dropdown-link">
+                                <div class="font-medium text-sm">Phala Network</div>
+                                <div class="text-xs text-gray-500">Blockchain infrastructure and specs</div>
                             </a>
                             <a href="https://phala.subsquare.io" class="dropdown-link">
                                 <div class="font-medium text-sm">Governance</div>
@@ -280,24 +291,24 @@
                     </a>
                     <div class="nav-dropdown">
                         <div class="dropdown-section">
-                            <a href="#" class="dropdown-link">
+                            <a href="https://phala.network/reports/2025RealCodeForRealdAGI.pdf" class="dropdown-link">
                                 <div class="font-medium text-sm">Solutions by Industry</div>
                                 <div class="text-xs text-gray-500">Financial, Healthcare, Data, AI SaaS</div>
                             </a>
-                            <a href="#" class="dropdown-link">
+                            <a href="https://cloud.phala.network/pricing" class="dropdown-link">
                                 <div class="font-medium text-sm">Pricing</div>
                                 <div class="text-xs text-gray-500">Calculator and enterprise plans</div>
                             </a>
-                            <a href="#" class="dropdown-link">
+                            <a href="https://cloud.phala.network/contact" class="dropdown-link">
                                 <div class="font-medium text-sm">Support</div>
                                 <div class="text-xs text-gray-500">Sales and technical support</div>
                             </a>
-                            <a href="#" class="dropdown-link">
+                            <a href="https://phala.network/tags/Phala%20Cloud" class="dropdown-link">
                                 <div class="font-medium text-sm">Resources</div>
                                 <div class="text-xs text-gray-500">Case studies and whitepapers</div>
                             </a>
                         </div>
-                        <a href="#" class="dropdown-cta">Contact Sales →</a>
+                        <a href="https://cloud.phala.network/contact" class="dropdown-cta">Contact Sales →</a>
                     </div>
                 </div>
             </div>
@@ -334,7 +345,7 @@
             
             <div class="mb-12">
                 <h1 class="text-[48px] md:text-[64px] font-bold text-white bg-black inline-block px-8 py-4 rounded-lg mb-6">
-                    BUILD AI <span class="bg-lime-400 text-black px-2">PEOPLE CAN TRUST</span>
+                    BUILD AI PEOPLE CAN TRUST
                 </h1>
                 <h2 class="text-[36px] md:text-[48px] font-bold text-black mt-4">
                     Deploy today, trust AI instantly.
