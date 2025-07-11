@@ -1,0 +1,13 @@
+{
+  "name": "phala-rebrand-preview-fixed",
+  "version": "1.0.0",
+  "description": "Phala Network rebrand preview - BUILD AI PEOPLE CAN TRUST (Vercel deployment ready)",
+  "scripts": {
+    "build": "echo 'Static site - no build needed'",
+    "dev": "npx serve public",
+    "start": "npx serve public"
+  },
+  "keywords": ["phala", "ai", "trust", "tee", "confidential-computing", "rebrand"],
+  "author": "Phala Network",
+  "license": "MIT"
+}
