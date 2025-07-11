@@ -133,12 +133,12 @@
     <nav class="fixed top-0 w-full z-50 p-6">
         <div class="max-w-7xl mx-auto bg-white rounded-[32px] shadow-lg px-12 py-8 flex justify-between items-center">
             <div class="flex items-center">
-                <div class="w-12 h-12 bg-black rounded-lg flex items-center justify-center">
-                    <svg class="w-8 h-8 text-lime-400" viewBox="0 0 24 24" fill="currentColor">
-                        <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
-                    </svg>
+                <div class="w-12 h-12 bg-gradient-to-br from-lime-400 to-lime-500 rounded-lg flex items-center justify-center">
+                    <div class="w-8 h-8 bg-black rounded-md flex items-center justify-center">
+                        <span class="text-lime-400 font-bold text-lg">P</span>
+                    </div>
                 </div>
-                <span class="ml-3 text-xl font-bold text-black">Phala</span>
+                <span class="ml-3 text-xl font-bold text-black">Phala Network</span>
             </div>
             
             <div class="hidden md:flex space-x-8">
@@ -153,27 +153,27 @@
                     <div class="nav-dropdown">
                         <div class="dropdown-section">
                             <div class="dropdown-title">MODELS & INFERENCE</div>
-                            <a href="#" class="dropdown-link">
+                            <a href="https://cloud.phala.network/models" class="dropdown-link">
                                 <div class="font-medium text-sm">Confidential AI Models</div>
                                 <div class="text-xs text-gray-500">Pre-trained models from $2.88/hour</div>
                             </a>
-                            <a href="#" class="dropdown-link">
+                            <a href="https://cloud.phala.network/gpu-inference" class="dropdown-link">
                                 <div class="font-medium text-sm">GPU TEE Inference</div>
                                 <div class="text-xs text-gray-500">NVIDIA H100/H200 with <5% overhead</div>
                             </a>
                         </div>
                         <div class="dropdown-section">
                             <div class="dropdown-title">AGENT PLATFORM</div>
-                            <a href="#" class="dropdown-link">
+                            <a href="https://github.com/phala-network/eliza-builder" class="dropdown-link">
                                 <div class="font-medium text-sm">Agent Framework</div>
                                 <div class="text-xs text-gray-500">Build with Eliza Builder</div>
                             </a>
-                            <a href="#" class="dropdown-link">
+                            <a href="https://cloud.phala.network/mcp" class="dropdown-link">
                                 <div class="font-medium text-sm">MCP Hosting</div>
                                 <div class="text-xs text-gray-500">Model Context Protocol serving</div>
                             </a>
                         </div>
-                        <a href="#" class="dropdown-cta">Deploy AI Today →</a>
+                        <a href="https://cloud.phala.network" class="dropdown-cta">Deploy AI Today →</a>
                     </div>
                 </div>
 
@@ -249,24 +249,24 @@
                     </a>
                     <div class="nav-dropdown">
                         <div class="dropdown-section">
-                            <a href="#" class="dropdown-link">
+                            <a href="/infrastructure" class="dropdown-link">
+                                <div class="font-medium text-sm">Infrastructure</div>
+                                <div class="text-xs text-gray-500">Distributed trustless cloud network</div>
+                            </a>
+                            <a href="https://docs.phala.network/compute-providers/basic-info" class="dropdown-link">
                                 <div class="font-medium text-sm">Compute-to-Earn</div>
                                 <div class="text-xs text-gray-500">Become a worker and earn rewards</div>
                             </a>
-                            <a href="#" class="dropdown-link">
+                            <a href="https://docs.phala.network/tech-specs/pha-token" class="dropdown-link">
                                 <div class="font-medium text-sm">PHA Token</div>
                                 <div class="text-xs text-gray-500">Tokenomics and staking rewards</div>
                             </a>
-                            <a href="#" class="dropdown-link">
+                            <a href="https://phala.subsquare.io" class="dropdown-link">
                                 <div class="font-medium text-sm">Governance</div>
                                 <div class="text-xs text-gray-500">Proposals and voting</div>
                             </a>
-                            <a href="#" class="dropdown-link">
-                                <div class="font-medium text-sm">Infrastructure</div>
-                                <div class="text-xs text-gray-500">Network stats and node operators</div>
-                            </a>
                         </div>
-                        <a href="#" class="dropdown-cta">Join Network →</a>
+                        <a href="https://app.phala.network" class="dropdown-cta">Join Network →</a>
                     </div>
                 </div>
 
@@ -328,13 +328,13 @@
             <div class="mb-8">
                 <span class="border border-gray-300 rounded-full px-4 py-2 text-sm font-medium inline-flex items-center gap-2 bg-white">
                     <div class="w-2 h-2 bg-lime-400 rounded-full"></div>
-                    Secure AI Platform
+                    Safe AGI
                 </span>
             </div>
             
             <div class="mb-12">
                 <h1 class="text-[48px] md:text-[64px] font-bold text-white bg-black inline-block px-8 py-4 rounded-lg mb-6">
-                    BUILD AI PEOPLE CAN TRUST
+                    BUILD AI <span class="bg-lime-400 text-black px-2">PEOPLE CAN TRUST</span>
                 </h1>
                 <h2 class="text-[36px] md:text-[48px] font-bold text-black mt-4">
                     Deploy today, trust AI instantly.
@@ -351,24 +351,67 @@
         <div class="absolute right-12 top-12 w-[400px] h-[400px] bg-stone-50/50 rounded-full border-4 border-zinc-100"></div>
     </section>
 
-    <!-- Problem/Why Care Section -->
+    <!-- Trust AI Cycle Section -->
     <section class="py-24 bg-white">
-        <div class="max-w-6xl mx-auto px-4">
+        <div class="max-w-7xl mx-auto px-4">
             <div class="text-center mb-16">
-                <h3 class="text-[48px] font-bold mb-4">When they trust AI:</h3>
+                <h3 class="text-[48px] font-bold mb-8">When Your Users Trust AI</h3>
+                <p class="text-[20px] text-gray-600 max-w-3xl mx-auto">
+                    Trust creates a powerful cycle that drives business growth and market leadership
+                </p>
             </div>
-            <div class="grid md:grid-cols-2 gap-12 max-w-5xl mx-auto">
-                <div class="bg-zinc-100 p-12 rounded-[32px] rounded-br-80">
-                    <h4 class="text-[32px] font-bold mb-4">Unlock more usecases</h4>
-                    <p class="text-[18px] text-gray-600 leading-relaxed">
-                        Onboard privacy-cared enterprises into AI. Enable sensitive data processing that was previously impossible.
-                    </p>
+            
+            <!-- Trust Cycle Flow -->
+            <div class="flex flex-col lg:flex-row items-center justify-center gap-8 max-w-6xl mx-auto">
+                <!-- Step 1: Trust AI -->
+                <div class="bg-gradient-to-br from-lime-50 to-lime-100 p-8 rounded-[32px] border-2 border-lime-200 flex-1 max-w-sm">
+                    <div class="w-12 h-12 bg-lime-400 rounded-full flex items-center justify-center mb-4">
+                        <span class="text-black font-bold text-lg">1</span>
+                    </div>
+                    <h4 class="text-[24px] font-bold mb-3">Trust AI</h4>
+                    <p class="text-gray-700">Users gain confidence in AI systems with verifiable security</p>
                 </div>
-                <div class="bg-zinc-100 p-12 rounded-[32px] rounded-bl-80">
-                    <h4 class="text-[32px] font-bold mb-4">Win the market</h4>
-                    <p class="text-[18px] text-gray-600 leading-relaxed">
-                        When enterprises trust your AI, they'll pay for more use cases. Trust drives adoption and revenue.
-                    </p>
+                
+                <!-- Arrow 1 -->
+                <div class="hidden lg:block">
+                    <svg class="w-12 h-8 text-lime-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+                    </svg>
+                </div>
+                
+                <!-- Step 2: Unlock Use Cases -->
+                <div class="bg-zinc-100 p-8 rounded-[32px] flex-1 max-w-sm">
+                    <div class="w-12 h-12 bg-black rounded-full flex items-center justify-center mb-4">
+                        <span class="text-lime-400 font-bold text-lg">2</span>
+                    </div>
+                    <h4 class="text-[24px] font-bold mb-3">Unlock Use Cases</h4>
+                    <p class="text-gray-700">Enable sensitive data processing previously impossible</p>
+                </div>
+                
+                <!-- Arrow 2 -->
+                <div class="hidden lg:block">
+                    <svg class="w-12 h-8 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+                    </svg>
+                </div>
+                
+                <!-- Step 3: Win the Market -->
+                <div class="bg-zinc-100 p-8 rounded-[32px] flex-1 max-w-sm">
+                    <div class="w-12 h-12 bg-black rounded-full flex items-center justify-center mb-4">
+                        <span class="text-lime-400 font-bold text-lg">3</span>
+                    </div>
+                    <h4 class="text-[24px] font-bold mb-3">Win the Market</h4>
+                    <p class="text-gray-700">Trust drives adoption, revenue, and competitive advantage</p>
+                </div>
+            </div>
+            
+            <!-- Return Arrow -->
+            <div class="text-center mt-12">
+                <div class="inline-flex items-center gap-4 bg-lime-50 px-6 py-3 rounded-full">
+                    <svg class="w-8 h-8 text-lime-400 transform rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+                    </svg>
+                    <span class="text-lime-600 font-medium">Reinforces Trust</span>
                 </div>
             </div>
         </div>
@@ -407,14 +450,14 @@
     <section class="py-24 bg-white">
         <div class="max-w-6xl mx-auto px-4">
             <div class="text-center mb-16">
-                <h2 class="text-[56px] font-bold mb-4">The Only Platform That Delivers All Three</h2>
+                <h2 class="text-[56px] font-bold mb-4">The Only AI Trust Layer</h2>
             </div>
             
             <!-- Tab Navigation -->
             <div class="flex justify-center mb-16">
                 <div class="bg-zinc-100 p-2 rounded-full">
                     <button onclick="showTab('instant')" id="tab-instant" class="px-10 py-4 rounded-full font-semibold transition-all text-[18px] tab-active">
-                        Instant
+                        Easy
                     </button>
                     <button onclick="showTab('open')" id="tab-open" class="px-10 py-4 rounded-full font-semibold transition-all text-[18px] tab-inactive">
                         Open
@@ -428,7 +471,7 @@
             <!-- Tab Content -->
             <div id="content-instant" class="tab-content">
                 <div class="text-center mb-12">
-                    <h3 class="text-[40px] font-bold mb-4">Instant</h3>
+                    <h3 class="text-[40px] font-bold mb-4">Easy</h3>
                     <p class="text-[24px] font-semibold text-gray-600">Build in Minutes, Not Months</p>
                 </div>
                 <div class="grid md:grid-cols-3 gap-8">
